@@ -1,0 +1,5 @@
+rootProject.name = 'VRVideoPlayer'
+
+// ':sdk' is the Google Cardboard SDK, vendored unmodified from
+// https://github.com/googlevr/cardboard (see NOTICE.md). ':app' is the video player.
+include ':sdk', ':app'

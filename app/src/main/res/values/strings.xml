@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VR Video Player</string>
+    <string name="intro">Watch videos in a Cardboard-style headset: the kind you slide your phone into.</string>
+
+    <string name="step_choose_video">1. Choose a video</string>
+    <string name="pick_video">Browse videos on this phone</string>
+    <string name="url_hint">…or paste a video link (mp4, HLS, DASH)</string>
+    <string name="use_url">Use link</string>
+    <string name="no_source">No video selected yet</string>
+    <string name="pick_subtitle">Add subtitles (optional)</string>
+    <string name="clear_subtitle">Remove</string>
+    <string name="no_subtitle">No subtitle file. Subtitles inside the video are used automatically.</string>
+
+    <string name="step_video_type">2. What kind of video is it?</string>
+    <string name="mode_2d">Normal 2D video (big virtual screen)</string>
+    <string name="mode_sbs">3D, side by side (left/right halves)</string>
+    <string name="mode_tb">3D, top and bottom (upper/lower halves)</string>
+    <string name="mode_360">360° video</string>
+
+    <string name="step_display">3. Display</string>
+    <string name="headset_mode">Headset mode (split screen for the two lenses). Turn off to preview on the phone alone.</string>
+
+    <string name="start">Start</string>
+    <string name="settings">Settings</string>
+    <string name="open_settings">Settings (zoom, brightness, captions, …)</string>
+    <string name="setup_viewer">Scan a new viewer QR code</string>
+    <string name="viewer_line">Headset profile in use: %1$s</string>
+    <string name="viewer_default">Google Cardboard (default). Scan the QR code on your viewer for a better picture.</string>
+    <string name="viewer_saved">A saved viewer</string>
+    <string name="viewer_unknown">unknown</string>
+
+    <string name="controls_help">After pressing Start, put the phone into the headset. A dot in the middle of your view is your pointer: keep it on a button for 2 seconds to click it, or click with a mouse. Look down to bring up the control bar (it stays up while paused).\n\nViewer button or mouse click anywhere else: play / pause. Press twice quickly: recenter.\nVolume up / down keys: skip forward / back.\nChange the dot and look time in Settings > Pointer.</string>
+
+    <string name="hud_press_to_play">Look down and press Play</string>
+    <string name="hud_loading">Loading…</string>
+    <string name="hud_ended">Ended. Press to replay</string>
+    <string name="hud_recentered">Recentered</string>
+
+    <string name="error_bad_url">Enter a link starting with http:// or https://</string>
+    <string name="error_playback">This video could not be played (%1$s).</string>
+    <string name="error_qr_unavailable">The viewer scanner is not available on this device.</string>
+
+    <!-- Settings -->
+    <string name="cat_screen">Screen</string>
+    <string name="pref_screen_size">Video zoom (screen size)</string>
+    <string name="pref_screen_size_summary">Percent, up to 400% for a giant IMAX-style screen. For 360° video this zooms in on the picture.</string>
+    <string name="pref_screen_distance">Screen distance</string>
+    <string name="pref_screen_distance_summary">In tenths of a metre (30 = 3 m). The picture keeps the same apparent size; only the depth feeling changes. Use zoom to change the size.</string>
+    <string name="pref_screen_height">Screen height</string>
+    <string name="pref_screen_height_summary">Moves the screen up (+) or down (−), in degrees. Not used for 360° video.</string>
+    <string name="pref_aspect">Screen shape</string>
+
+    <string name="cat_picture">Picture and brightness</string>
+    <string name="pref_brightness">Video brightness</string>
+    <string name="pref_brightness_summary">Percent. Above 100 brightens dark videos.</string>
+    <string name="pref_contrast">Contrast</string>
+    <string name="pref_saturation">Colour saturation</string>
+    <string name="pref_phone_brightness_override">Set phone screen brightness</string>
+    <string name="pref_phone_brightness_override_summary">Off: the phone keeps its normal brightness. On: use the level below while a video is playing.</string>
+    <string name="pref_phone_brightness">Phone screen brightness</string>
+
+    <string name="cat_3d">3D</string>
+    <string name="pref_layout_3d">3D picture format</string>
+    <string name="pref_layout_3d_summary">Half: the two pictures are squeezed to fit one frame (most common). Full: two complete pictures. Automatic guesses from the video shape.</string>
+    <string name="pref_swap_eyes">Swap left and right eye</string>
+    <string name="pref_swap_eyes_summary">Turn on if the 3D looks inside-out.</string>
+
+    <string name="cat_headset">Headset</string>
+    <string name="pref_viewer">Your viewer (headset profile)</string>
+    <string name="pref_viewer_summary">%1$s\n\nTap to scan a viewer QR code. The viewer is remembered until you scan another.</string>
+    <string name="pref_eye_shift">Eye distance adjustment</string>
+    <string name="pref_eye_shift_summary">Moves the left and right pictures apart (+) or together (−). Use it if the picture feels slightly off or you see double, for example because your eyes are further apart or closer than your viewer\'s lenses.</string>
+    <string name="pref_diopter">Focus (diopter) and glasses</string>
+    <string name="pref_diopter_summary">Focus is set by the lenses in your viewer, so an app cannot change it. A sharper-looking picture needs a viewer with focus adjustment, or you can wear your glasses (the screen distance and zoom settings do not change focus). Some viewers also take clip-in prescription lenses.</string>
+
+    <string name="cat_playback">Playback</string>
+    <string name="pref_speed">Playback speed</string>
+    <string name="pref_skip">Skip step</string>
+    <string name="pref_skip_summary">How far the volume buttons jump forward or back.</string>
+    <string name="pref_loop">Repeat the video</string>
+    <string name="pref_auto_start">Start automatically</string>
+    <string name="pref_auto_start_summary">For viewers without a button that touches the screen: the video starts by itself after a delay.</string>
+    <string name="pref_auto_start_delay">Delay before starting (seconds)</string>
+    <string name="pref_audio_language">Preferred audio language</string>
+    <string name="pref_language_summary">A language code such as en, de or hi. Leave empty to use the video\'s default.</string>
+
+    <string name="cat_captions">Captions</string>
+    <string name="pref_captions_enabled">Show captions</string>
+    <string name="pref_captions_enabled_summary">Uses subtitles inside the video or a subtitle file you add on the start screen.</string>
+    <string name="pref_subtitle_language">Preferred caption language</string>
+    <string name="pref_caption_size">Caption size</string>
+    <string name="pref_caption_color">Caption colour</string>
+    <string name="pref_caption_background">Caption background darkness</string>
+    <string name="pref_caption_offset">Caption position</string>
+    <string name="pref_caption_offset_summary">Moves captions up (+) or down (−), as a percentage of the screen height.</string>
+
+    <string name="cat_other">Other</string>
+    <string name="pref_reset">Reset all settings</string>
+    <string name="pref_reset_summary">Back to the default values. Your viewer profile is kept.</string>
+    <string name="settings_reset_done">Settings reset</string>
+
+    <string name="cat_pointer">Pointer (dot and gaze click)</string>
+    <string name="pref_show_dot">Show the dot in the middle of the view</string>
+    <string name="pref_show_dot_summary">A small dot that shows where you are pointing inside the headset.</string>
+    <string name="pref_dwell_click">Click by looking</string>
+    <string name="pref_dwell_click_summary">Keep the dot on an in-headset button and it clicks by itself. Turn off to click only with the mouse or a tap.</string>
+    <string name="pref_dwell_seconds">Look time before a click (seconds)</string>
+    <string name="hud_volume">Volume %1$d%%</string>
+    <string name="hud_no_subtitles">No subtitles in this video</string>
+    <string name="hud_one_audio">Only one audio track</string>
+
+    <string name="tagline">Videos in your phone-in-headset viewer</string>
+    <string name="card_video">Video</string>
+    <string name="card_subtitles">Subtitles</string>
+    <string name="card_type">Video type</string>
+    <string name="card_headset">Headset</string>
+
+    <!-- About screen. Edit the links and texts here. -->
+    <string name="about">About</string>
+    <string name="about_author">Made by Sagar Soneji</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_story_title">Why this app exists</string>
+    <string name="about_story">I was looking for a free VR video player with advanced features for my phone-in-headset viewer, but I could not find one, so I made my own. It plays 2D, 3D and 360° videos from files or links, and it is fully customisable.</string>
+    <string name="about_contact_title">Feedback and bugs</string>
+    <string name="about_contact">Have a feature request or found a bug? Write to me:</string>
+    <string name="contact_email">worksbsoneji@gmail.com</string>
+    <string name="contact_email_subject">VR Video Player: feedback</string>
+    <string name="about_email_button">Send an email</string>
+    <!-- TODO: replace with the real repository address once it exists. -->
+    <string name="github_url">https://github.com/YOUR-USERNAME/VRVideoPlayer</string>
+    <string name="about_github_button">Project on GitHub</string>
+    <string name="linkedin_url">https://www.linkedin.com/in/sbsoneji/</string>
+    <string name="about_linkedin_button">Sagar on LinkedIn</string>
+    <string name="about_credits_title">Credits and licences</string>
+    <string name="about_credits">This app is built with free software. Thank you to the people behind it:\n\n• Google Cardboard SDK (head tracking, lens correction, viewer QR codes). Apache License 2.0. github.com/googlevr/cardboard\n\n• AndroidX Media3 / ExoPlayer (video playback). Apache License 2.0. developer.android.com/media/media3\n\n• AndroidX AppCompat and Preference libraries. Apache License 2.0.\n\n• Material Components for Android (buttons, cards, theme). Apache License 2.0.\n\n• Material Icons by Google (the start screen icons). Apache License 2.0.\n\n• Protocol Buffers (lite), used by the Cardboard SDK. BSD 3-Clause licence.\n\nThe Apache License 2.0 can be read at apache.org/licenses/LICENSE-2.0.</string>
+    <string name="error_no_email_app">No email app found. Write to %1$s</string>
+    <string name="pref_menu_offset">Control bar position</string>
+    <string name="pref_menu_offset_summary">Moves the bar in the headset down (−) or up (+), in degrees. Lower it so you do not see it when you tilt your head a little.</string>
+    <string name="pref_pointer_fix">Mouse pointer correction</string>
+    <string name="pref_pointer_fix_summary">The lenses bend the picture, so a mouse click can land beside the pointer, more so near the edges. Raise this if clicks land too far from the middle than the pointer; lower it if too near. 100 is the normal setting.</string>
+    <string name="hud_cal_step">Click the dot %1$d/%2$d</string>
+    <string name="hud_cal_done">Pointer calibrated</string>
+    <string name="hud_cal_failed">Calibration failed, try again</string>
+    <string name="hud_cal_reset">Calibration removed</string>
+</resources>

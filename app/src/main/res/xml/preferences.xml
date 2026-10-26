@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Every defaultValue here must match the default in VrSettings.kt. -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="cat_screen"
+        android:title="@string/cat_screen">
+
+        <SeekBarPreference
+            android:key="screen_size"
+            android:title="@string/pref_screen_size"
+            android:summary="@string/pref_screen_size_summary"
+            android:defaultValue="100"
+            android:max="400"
+            app:min="50"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="screen_distance"
+            android:title="@string/pref_screen_distance"
+            android:summary="@string/pref_screen_distance_summary"
+            android:defaultValue="30"
+            android:max="80"
+            app:min="15"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="screen_height"
+            android:title="@string/pref_screen_height"
+            android:summary="@string/pref_screen_height_summary"
+            android:defaultValue="0"
+            android:max="30"
+            app:min="-30"
+            app:showSeekBarValue="true" />
+
+        <ListPreference
+            android:key="aspect_mode"
+            android:title="@string/pref_aspect"
+            android:defaultValue="auto"
+            android:entries="@array/aspect_entries"
+            android:entryValues="@array/aspect_values"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_picture"
+        android:title="@string/cat_picture">
+
+        <SeekBarPreference
+            android:key="brightness"
+            android:title="@string/pref_brightness"
+            android:summary="@string/pref_brightness_summary"
+            android:defaultValue="100"
+            android:max="150"
+            app:min="20"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="contrast"
+            android:title="@string/pref_contrast"
+            android:defaultValue="100"
+            android:max="150"
+            app:min="50"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="saturation"
+            android:title="@string/pref_saturation"
+            android:defaultValue="100"
+            android:max="200"
+            app:min="0"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="phone_brightness_override"
+            android:title="@string/pref_phone_brightness_override"
+            android:summary="@string/pref_phone_brightness_override_summary"
+            android:defaultValue="false" />
+
+        <SeekBarPreference
+            android:key="phone_brightness"
+            android:title="@string/pref_phone_brightness"
+            android:dependency="phone_brightness_override"
+            android:defaultValue="100"
+            android:max="100"
+            app:min="5"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_3d"
+        android:title="@string/cat_3d">
+
+        <ListPreference
+            android:key="layout_3d"
+            android:title="@string/pref_layout_3d"
+            android:summary="@string/pref_layout_3d_summary"
+            android:defaultValue="auto"
+            android:entries="@array/layout3d_entries"
+            android:entryValues="@array/layout3d_values" />
+
+        <SwitchPreferenceCompat
+            android:key="swap_eyes"
+            android:title="@string/pref_swap_eyes"
+            android:summary="@string/pref_swap_eyes_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_headset"
+        android:title="@string/cat_headset">
+
+        <Preference
+            android:key="viewer_info"
+            android:title="@string/pref_viewer" />
+
+        <SeekBarPreference
+            android:key="eye_shift"
+            android:title="@string/pref_eye_shift"
+            android:summary="@string/pref_eye_shift_summary"
+            android:defaultValue="0"
+            android:max="80"
+            app:min="-80"
+            app:showSeekBarValue="true" />
+
+        <Preference
+            android:key="diopter_info"
+            android:title="@string/pref_diopter"
+            android:summary="@string/pref_diopter_summary"
+            android:selectable="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_pointer"
+        android:title="@string/cat_pointer">
+
+        <SwitchPreferenceCompat
+            android:key="show_dot"
+            android:title="@string/pref_show_dot"
+            android:summary="@string/pref_show_dot_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="dwell_click"
+            android:title="@string/pref_dwell_click"
+            android:summary="@string/pref_dwell_click_summary"
+            android:defaultValue="true" />
+
+        <SeekBarPreference
+            android:key="menu_offset"
+            android:title="@string/pref_menu_offset"
+            android:summary="@string/pref_menu_offset_summary"
+            android:defaultValue="0"
+            android:max="20"
+            app:min="-50"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="pointer_fix"
+            android:title="@string/pref_pointer_fix"
+            android:summary="@string/pref_pointer_fix_summary"
+            android:defaultValue="100"
+            android:max="300"
+            app:min="-100"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="dwell_seconds"
+            android:title="@string/pref_dwell_seconds"
+            android:dependency="dwell_click"
+            android:defaultValue="2"
+            android:max="5"
+            app:min="1"
+            app:showSeekBarValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_playback"
+        android:title="@string/cat_playback">
+
+        <ListPreference
+            android:key="playback_speed"
+            android:title="@string/pref_speed"
+            android:defaultValue="1.0"
+            android:entries="@array/speed_entries"
+            android:entryValues="@array/speed_values"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            android:key="skip_seconds"
+            android:title="@string/pref_skip"
+            android:summary="@string/pref_skip_summary"
+            android:defaultValue="10"
+            android:entries="@array/skip_entries"
+            android:entryValues="@array/skip_values" />
+
+        <SwitchPreferenceCompat
+            android:key="loop"
+            android:title="@string/pref_loop"
+            android:defaultValue="false" />
+
+        <SwitchPreferenceCompat
+            android:key="auto_start"
+            android:title="@string/pref_auto_start"
+            android:summary="@string/pref_auto_start_summary"
+            android:defaultValue="false" />
+
+        <SeekBarPreference
+            android:key="auto_start_delay"
+            android:title="@string/pref_auto_start_delay"
+            android:dependency="auto_start"
+            android:defaultValue="8"
+            android:max="30"
+            app:min="3"
+            app:showSeekBarValue="true" />
+
+        <EditTextPreference
+            android:key="audio_language"
+            android:title="@string/pref_audio_language"
+            android:summary="@string/pref_language_summary"
+            android:defaultValue=""
+            app:useSimpleSummaryProvider="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_captions"
+        android:title="@string/cat_captions">
+
+        <SwitchPreferenceCompat
+            android:key="captions_enabled"
+            android:title="@string/pref_captions_enabled"
+            android:summary="@string/pref_captions_enabled_summary"
+            android:defaultValue="true" />
+
+        <EditTextPreference
+            android:key="subtitle_language"
+            android:title="@string/pref_subtitle_language"
+            android:summary="@string/pref_language_summary"
+            android:dependency="captions_enabled"
+            android:defaultValue="" />
+
+        <SeekBarPreference
+            android:key="caption_size"
+            android:title="@string/pref_caption_size"
+            android:dependency="captions_enabled"
+            android:defaultValue="100"
+            android:max="200"
+            app:min="50"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <ListPreference
+            android:key="caption_color"
+            android:title="@string/pref_caption_color"
+            android:dependency="captions_enabled"
+            android:defaultValue="white"
+            android:entries="@array/caption_color_entries"
+            android:entryValues="@array/caption_color_values"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            android:key="caption_background"
+            android:title="@string/pref_caption_background"
+            android:dependency="captions_enabled"
+            android:defaultValue="60"
+            android:max="100"
+            app:min="0"
+            app:seekBarIncrement="5"
+            app:showSeekBarValue="true" />
+
+        <SeekBarPreference
+            android:key="caption_offset"
+            android:title="@string/pref_caption_offset"
+            android:summary="@string/pref_caption_offset_summary"
+            android:dependency="captions_enabled"
+            android:defaultValue="0"
+            android:max="50"
+            app:min="-50"
+            app:showSeekBarValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_other"
+        android:title="@string/cat_other">
+
+        <Preference
+            android:key="reset_settings"
+            android:title="@string/pref_reset"
+            android:summary="@string/pref_reset_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

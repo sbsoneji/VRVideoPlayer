@@ -1,0 +1,29 @@
+// Top-level build file.
+//
+// The plugin versions below are the same ones the upstream Cardboard repository builds with,
+// because the vendored ':sdk' module (and its protobuf code generation) depends on them.
+//
+// Note: there is intentionally no 'org.jetbrains.kotlin.android' plugin here. Since AGP 9.0,
+// Kotlin support is built into the Android Gradle Plugin, and applying the old plugin fails.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:9.2.0'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.10.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete layout.buildDirectory
+}

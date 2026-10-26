@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The normal start screen. -->
+    <style name="Theme.VRVideo" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/brand_on_primary</item>
+        <item name="colorPrimaryContainer">@color/brand_container</item>
+        <item name="colorOnPrimaryContainer">@color/brand_on_container</item>
+    </style>
+
+    <!-- The VR screen. Same base theme the Cardboard SDK samples use for their VR activity;
+         the SDK's on-screen back / gear buttons are styled for AppCompat. -->
+    <style name="Theme.VRVideo.Player" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>

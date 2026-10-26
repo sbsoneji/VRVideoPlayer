@@ -1,0 +1,12 @@
+*.iml
+.gradle/
+.idea/
+.kotlin/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Native library extracted from the SDK AAR at build time (see app/build.gradle: extractNdk)
+app/libraries/

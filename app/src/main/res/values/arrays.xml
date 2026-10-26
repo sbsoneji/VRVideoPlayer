@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="aspect_entries">
+        <item>Automatic (the video\'s own shape)</item>
+        <item>16:9</item>
+        <item>4:3</item>
+        <item>21:9 (ultra-wide)</item>
+        <item>1:1 (square)</item>
+        <item>Stretch to fill the screen area</item>
+    </string-array>
+    <string-array name="aspect_values">
+        <item>auto</item>
+        <item>16:9</item>
+        <item>4:3</item>
+        <item>21:9</item>
+        <item>1:1</item>
+        <item>fill</item>
+    </string-array>
+
+    <string-array name="layout3d_entries">
+        <item>Automatic</item>
+        <item>Half (each picture squeezed)</item>
+        <item>Full (each picture complete)</item>
+    </string-array>
+    <string-array name="layout3d_values">
+        <item>auto</item>
+        <item>half</item>
+        <item>full</item>
+    </string-array>
+
+    <string-array name="speed_entries">
+        <item>0.5×</item>
+        <item>0.75×</item>
+        <item>1× (normal)</item>
+        <item>1.25×</item>
+        <item>1.5×</item>
+        <item>2×</item>
+    </string-array>
+    <string-array name="speed_values">
+        <item>0.5</item>
+        <item>0.75</item>
+        <item>1.0</item>
+        <item>1.25</item>
+        <item>1.5</item>
+        <item>2.0</item>
+    </string-array>
+
+    <string-array name="skip_entries">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>60 seconds</item>
+    </string-array>
+    <string-array name="skip_values">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="caption_color_entries">
+        <item>White</item>
+        <item>Yellow</item>
+        <item>Cyan</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="caption_color_values">
+        <item>white</item>
+        <item>yellow</item>
+        <item>cyan</item>
+        <item>green</item>
+    </string-array>
+</resources>

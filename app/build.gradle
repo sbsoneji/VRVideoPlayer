@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+// Kotlin is compiled by AGP itself (built-in Kotlin, AGP 9+): no Kotlin plugin is applied.
+
+android {
+    namespace = 'com.example.vrvideoplayer'
+
+    // AndroidX libraries (Media3 in particular) require a recent compileSdk. If Gradle reports
+    // "requires libraries and applications that depend on it to compile against version N or
+    // later", raise this number to N.
+    compileSdk = 37
+
+    // Same NDK as the vendored SDK module, so only one NDK has to be installed.
+    ndkVersion = '29.0.14206865'
+
+    defaultConfig {
+        applicationId "com.example.vrvideoplayer"
+        minSdkVersion = 26
+        targetSdkVersion = 35
+        versionCode 69420
+        versionName "0.69.420"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+        externalNativeBuild.cmake {
+            arguments "-DANDROID_STL=c++_shared"
+        }
+    }
+
+    buildTypes {
+        release {
+            // Kept off on purpose: the Cardboard SDK is called through JNI and shrinking it
+            // would need extra keep rules.
+            minifyEnabled false
+        }
+    }
+
+    externalNativeBuild.cmake {
+        path "CMakeLists.txt"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation project(':sdk')
+
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.13.0'
+    // Settings screen.
+    implementation 'androidx.preference:preference:1.2.1'
+    // The viewer profile type from the Cardboard SDK (':sdk') is a protobuf class; the app
+    // needs the protobuf library on its own compile path to read it.
+    implementation 'com.google.protobuf:protobuf-javalite:3.19.4'
+
+    // Video playback. HLS (.m3u8) and DASH (.mpd) are included for streaming URLs.
+    implementation 'androidx.media3:media3-exoplayer:1.11.1'
+    implementation 'androidx.media3:media3-exoplayer-hls:1.11.1'
+    implementation 'androidx.media3:media3-exoplayer-dash:1.11.1'
+}
+
+// The Cardboard SDK's native library (libGfxPluginCardboard.so) lives inside the SDK module's
+// .aar, so it has to be extracted before our own native code (cardboard_sdk_jni, built from
+// CMakeLists.txt) can link against it. This is the same mechanism the upstream "paperscope"
+// demo app uses.
+task extractNdk {
+    dependsOn ':sdk:assembleRelease'
+    doLast {
+        copy {
+            from zipTree("${project.rootDir}/sdk/build/outputs/aar/sdk-release.aar")
+            into "libraries/"
+            include "jni/**/libGfxPluginCardboard.so"
+        }
+        copy {
+            from "${project.rootDir}/sdk/include/cardboard.h"
+            into "libraries/"
+        }
+    }
+}
+
+task deleteNdk(type: Delete) {
+    delete "libraries/jni"
+    delete "libraries/cardboard.h"
+}
+
+preBuild.dependsOn(extractNdk)
+clean.dependsOn(deleteNdk)
